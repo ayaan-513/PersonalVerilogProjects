@@ -1,10 +1,3 @@
-/*
-Copyright by Henry Ko and Nicola Nicolici
-Department of Electrical and Computer Engineering
-McMaster University
-Ontario, Canada
-*/
-
 `timescale 1ns/100ps
 `ifndef DISABLE_DEFAULT_NET
 `default_nettype none
