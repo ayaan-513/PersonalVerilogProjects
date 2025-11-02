@@ -1,0 +1,558 @@
+Analysis & Synthesis report for experiment4
+Sun Nov 02 01:49:25 2025
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |experiment4|current_state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |experiment4
+ 14. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Nov 02 01:49:25 2025       ;
+; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
+; Revision Name                      ; experiment4                                 ;
+; Top-level Entity Name              ; experiment4                                 ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 468                                         ;
+;     Total combinational functions  ; 467                                         ;
+;     Dedicated logic registers      ; 112                                         ;
+; Total registers                    ; 112                                         ;
+; Total pins                         ; 102                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; experiment4        ; experiment4        ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 10          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 10          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-10        ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                             ;
++----------------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path       ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                   ; Library ;
++----------------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------+---------+
+; ../rtl/experiment4.sv                  ; yes             ; User SystemVerilog HDL File  ; C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv                  ;         ;
+; ../rtl/convert_hex_to_seven_segment.sv ; yes             ; User SystemVerilog HDL File  ; C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/convert_hex_to_seven_segment.sv ;         ;
+; lpm_divide.tdf                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_divide.tdf                                          ;         ;
+; abs_divider.inc                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/abs_divider.inc                                         ;         ;
+; sign_div_unsign.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                     ;         ;
+; aglobal191.inc                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc                                          ;         ;
+; db/lpm_divide_6bm.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/syn/db/lpm_divide_6bm.tdf           ;         ;
+; db/sign_div_unsign_rlh.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/syn/db/sign_div_unsign_rlh.tdf      ;         ;
+; db/alt_u_div_a7f.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/syn/db/alt_u_div_a7f.tdf            ;         ;
+; db/add_sub_7pc.tdf                     ; yes             ; Auto-Generated Megafunction  ; C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/syn/db/add_sub_7pc.tdf              ;         ;
+; db/add_sub_8pc.tdf                     ; yes             ; Auto-Generated Megafunction  ; C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/syn/db/add_sub_8pc.tdf              ;         ;
++----------------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                      ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Estimated Total logic elements              ; 468                ;
+;                                             ;                    ;
+; Total combinational functions               ; 467                ;
+; Logic element usage by number of LUT inputs ;                    ;
+;     -- 4 input functions                    ; 203                ;
+;     -- 3 input functions                    ; 89                 ;
+;     -- <=2 input functions                  ; 175                ;
+;                                             ;                    ;
+; Logic elements by mode                      ;                    ;
+;     -- normal mode                          ; 369                ;
+;     -- arithmetic mode                      ; 98                 ;
+;                                             ;                    ;
+; Total registers                             ; 112                ;
+;     -- Dedicated logic registers            ; 112                ;
+;     -- I/O registers                        ; 0                  ;
+;                                             ;                    ;
+; I/O pins                                    ; 102                ;
+;                                             ;                    ;
+; Embedded Multiplier 9-bit elements          ; 0                  ;
+;                                             ;                    ;
+; Maximum fan-out node                        ; SWITCH_I[17]~input ;
+; Maximum fan-out                             ; 154                ;
+; Total fan-out                               ; 1914               ;
+; Average fan-out                             ; 2.44               ;
++---------------------------------------------+--------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                             ;
++-----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------+------------------------------+--------------+
+; Compilation Hierarchy Node              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                          ; Entity Name                  ; Library Name ;
++-----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------+------------------------------+--------------+
+; |experiment4                            ; 467 (245)           ; 112 (112)                 ; 0           ; 0            ; 0       ; 0         ; 102  ; 0            ; |experiment4                                                                                                 ; experiment4                  ; work         ;
+;    |convert_hex_to_seven_segment:unit0| ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |experiment4|convert_hex_to_seven_segment:unit0                                                              ; convert_hex_to_seven_segment ; work         ;
+;    |convert_hex_to_seven_segment:unit1| ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |experiment4|convert_hex_to_seven_segment:unit1                                                              ; convert_hex_to_seven_segment ; work         ;
+;    |convert_hex_to_seven_segment:unit2| ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |experiment4|convert_hex_to_seven_segment:unit2                                                              ; convert_hex_to_seven_segment ; work         ;
+;    |convert_hex_to_seven_segment:unit3| ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |experiment4|convert_hex_to_seven_segment:unit3                                                              ; convert_hex_to_seven_segment ; work         ;
+;    |lpm_divide:Mod0|                    ; 198 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |experiment4|lpm_divide:Mod0                                                                                 ; lpm_divide                   ; work         ;
+;       |lpm_divide_6bm:auto_generated|   ; 198 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |experiment4|lpm_divide:Mod0|lpm_divide_6bm:auto_generated                                                   ; lpm_divide_6bm               ; work         ;
+;          |sign_div_unsign_rlh:divider|  ; 198 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |experiment4|lpm_divide:Mod0|lpm_divide_6bm:auto_generated|sign_div_unsign_rlh:divider                       ; sign_div_unsign_rlh          ; work         ;
+;             |alt_u_div_a7f:divider|     ; 198 (198)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |experiment4|lpm_divide:Mod0|lpm_divide_6bm:auto_generated|sign_div_unsign_rlh:divider|alt_u_div_a7f:divider ; alt_u_div_a7f                ; work         ;
++-----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------+------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |experiment4|current_state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
++----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+
+; Name                 ; current_state.100001 ; current_state.100000 ; current_state.011111 ; current_state.011110 ; current_state.011101 ; current_state.011100 ; current_state.011011 ; current_state.011010 ; current_state.011001 ; current_state.011000 ; current_state.010111 ; current_state.010110 ; current_state.010101 ; current_state.010100 ; current_state.010011 ; current_state.010010 ; current_state.010001 ; current_state.010000 ; current_state.001111 ; current_state.001110 ; current_state.001101 ; current_state.001100 ; current_state.001011 ; current_state.001010 ; current_state.001001 ; current_state.001000 ; current_state.000111 ; current_state.000110 ; current_state.000101 ; current_state.000100 ; current_state.000011 ; current_state.000010 ; current_state.000001 ; current_state.000000 ;
++----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+
+; current_state.000000 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ;
+; current_state.000001 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 1                    ;
+; current_state.000010 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 1                    ;
+; current_state.000011 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 1                    ;
+; current_state.000100 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.000101 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.000110 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.000111 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.001000 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.001001 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.001010 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.001011 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.001100 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.001101 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.001110 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.001111 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.010000 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.010001 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.010010 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.010011 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.010100 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.010101 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.010110 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.010111 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.011000 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.011001 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.011010 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.011011 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.011100 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.011101 ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.011110 ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.011111 ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.100000 ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
+; current_state.100001 ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ;
++----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; LED_RED_O[17]~reg0                     ; Stuck at GND due to stuck port data_in ;
+; LED_RED_O[16]~reg0                     ; Stuck at GND due to stuck port data_in ;
+; score_count[1][3]                      ; Stuck at GND due to stuck port data_in ;
+; score_count[1][2]                      ; Stuck at GND due to stuck port data_in ;
+; current_state~38                       ; Lost fanout                            ;
+; current_state~39                       ; Lost fanout                            ;
+; current_state~40                       ; Lost fanout                            ;
+; current_state~41                       ; Lost fanout                            ;
+; current_state~42                       ; Lost fanout                            ;
+; current_state~43                       ; Lost fanout                            ;
+; Total Number of Removed Registers = 10 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 112   ;
+; Number of registers using Synchronous Clear  ; 25    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 112   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 5     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; BCD_count[1][1]                        ; 11      ;
+; one_sec_clock                          ; 5       ;
+; one_sec_clock_buf                      ; 3       ;
+; Total number of inverted registers = 3 ;         ;
++----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |experiment4|BCD_count[0][0] ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 0 LEs                ; 10 LEs                 ; Yes        ; |experiment4|random[3]       ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |experiment4|Mux0            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |experiment4 ;
++-------------------+----------+----------------------------------------------+
+; Parameter Name    ; Value    ; Type                                         ;
++-------------------+----------+----------------------------------------------+
+; MAX_1Hz_div_count ; 24999999 ; Signed Integer                               ;
++-------------------+----------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                ;
+; LPM_WIDTHD             ; 5              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_6bm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 102                         ;
+; cycloneiii_ff         ; 112                         ;
+;     CLR               ; 82                          ;
+;     CLR SCLR          ; 25                          ;
+;     ENA CLR           ; 5                           ;
+; cycloneiii_lcell_comb ; 473                         ;
+;     arith             ; 98                          ;
+;         2 data inputs ; 42                          ;
+;         3 data inputs ; 56                          ;
+;     normal            ; 375                         ;
+;         0 data inputs ; 14                          ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 119                         ;
+;         3 data inputs ; 33                          ;
+;         4 data inputs ; 203                         ;
+;                       ;                             ;
+; Max LUT depth         ; 39.00                       ;
+; Average LUT depth     ; 21.70                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Processing started: Sun Nov 02 01:49:18 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off experiment4 -c experiment4
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /users/abrar hussain/downloads/verilog_whack-a-mole_project/projectfinal/rtl/experiment4.sv
+    Info (12023): Found entity 1: experiment4 File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file /users/abrar hussain/downloads/verilog_whack-a-mole_project/projectfinal/rtl/convert_hex_to_seven_segment.sv
+    Info (12023): Found entity 1: convert_hex_to_seven_segment File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/convert_hex_to_seven_segment.sv Line: 14
+Info (12127): Elaborating entity "experiment4" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at experiment4.sv(123): truncated value with size 32 to match size of target (5) File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 123
+Warning (10230): Verilog HDL assignment warning at experiment4.sv(128): truncated value with size 18 to match size of target (16) File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 128
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(156): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 156
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(171): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 171
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(186): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 186
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(201): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 201
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(216): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 216
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(231): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 231
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(246): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 246
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(261): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 261
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(276): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 276
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(291): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 291
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(306): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 306
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(321): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 321
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(336): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 336
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(351): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 351
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(366): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 366
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(381): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 381
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(396): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 396
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(411): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 411
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(426): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 426
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(441): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 441
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(456): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 456
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(471): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 471
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(486): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 486
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(501): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 501
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(516): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 516
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(531): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 531
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(546): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 546
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(561): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 561
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(576): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 576
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(591): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 591
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(606): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 606
+Warning (10027): Verilog HDL or VHDL warning at the experiment4.sv(622): index expression is not wide enough to address all of the elements in the array File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 622
+Info (12128): Elaborating entity "convert_hex_to_seven_segment" for hierarchy "convert_hex_to_seven_segment:unit0" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 664
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 123
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 123
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 123
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_6bm.tdf
+    Info (12023): Found entity 1: lpm_divide_6bm File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/syn/db/lpm_divide_6bm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_rlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_rlh File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/syn/db/sign_div_unsign_rlh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_a7f.tdf
+    Info (12023): Found entity 1: alt_u_div_a7f File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/syn/db/alt_u_div_a7f.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/syn/db/add_sub_7pc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/syn/db/add_sub_8pc.tdf Line: 23
+Info (13000): Registers with preset signals will power-up high File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 105
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "random[3]" is converted into an equivalent circuit using register "random[3]~_emulated" and latch "random[3]~1" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 148
+    Warning (13310): Register "random[0]" is converted into an equivalent circuit using register "random[0]~_emulated" and latch "random[0]~5" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 148
+    Warning (13310): Register "random[1]" is converted into an equivalent circuit using register "random[1]~_emulated" and latch "random[1]~9" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 148
+    Warning (13310): Register "random[2]" is converted into an equivalent circuit using register "random[2]~_emulated" and latch "random[2]~13" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 148
+    Warning (13310): Register "switch_buf[12]" is converted into an equivalent circuit using register "switch_buf[12]~_emulated" and latch "switch_buf[12]~1" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 130
+    Warning (13310): Register "switch_buf[10]" is converted into an equivalent circuit using register "switch_buf[10]~_emulated" and latch "switch_buf[10]~5" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 130
+    Warning (13310): Register "switch_buf[8]" is converted into an equivalent circuit using register "switch_buf[8]~_emulated" and latch "switch_buf[8]~9" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 130
+    Warning (13310): Register "switch_buf[14]" is converted into an equivalent circuit using register "switch_buf[14]~_emulated" and latch "switch_buf[14]~13" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 130
+    Warning (13310): Register "switch_buf[5]" is converted into an equivalent circuit using register "switch_buf[5]~_emulated" and latch "switch_buf[5]~17" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 130
+    Warning (13310): Register "switch_buf[3]" is converted into an equivalent circuit using register "switch_buf[3]~_emulated" and latch "switch_buf[3]~21" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 130
+    Warning (13310): Register "switch_buf[1]" is converted into an equivalent circuit using register "switch_buf[1]~_emulated" and latch "switch_buf[1]~25" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 130
+    Warning (13310): Register "switch_buf[7]" is converted into an equivalent circuit using register "switch_buf[7]~_emulated" and latch "switch_buf[7]~29" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 130
+    Warning (13310): Register "switch_buf[4]" is converted into an equivalent circuit using register "switch_buf[4]~_emulated" and latch "switch_buf[4]~33" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 130
+    Warning (13310): Register "switch_buf[2]" is converted into an equivalent circuit using register "switch_buf[2]~_emulated" and latch "switch_buf[2]~37" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 130
+    Warning (13310): Register "switch_buf[0]" is converted into an equivalent circuit using register "switch_buf[0]~_emulated" and latch "switch_buf[0]~41" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 130
+    Warning (13310): Register "switch_buf[6]" is converted into an equivalent circuit using register "switch_buf[6]~_emulated" and latch "switch_buf[6]~45" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 130
+    Warning (13310): Register "switch_buf[13]" is converted into an equivalent circuit using register "switch_buf[13]~_emulated" and latch "switch_buf[13]~49" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 130
+    Warning (13310): Register "switch_buf[11]" is converted into an equivalent circuit using register "switch_buf[11]~_emulated" and latch "switch_buf[11]~53" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 130
+    Warning (13310): Register "switch_buf[9]" is converted into an equivalent circuit using register "switch_buf[9]~_emulated" and latch "switch_buf[9]~57" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 130
+    Warning (13310): Register "switch_buf[15]" is converted into an equivalent circuit using register "switch_buf[15]~_emulated" and latch "switch_buf[15]~61" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 130
+    Warning (13310): Register "random[4]" is converted into an equivalent circuit using register "random[4]~_emulated" and latch "random[4]~17" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 148
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[3][1]" is stuck at GND File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[4][0]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[4][1]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[4][2]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[4][3]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[4][4]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[4][5]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[4][6]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[5][0]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[5][1]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[5][2]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[5][3]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[5][4]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[5][5]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[5][6]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[6][0]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[6][1]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[6][2]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[6][3]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[6][4]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[6][5]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[6][6]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[7][0]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[7][1]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[7][2]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[7][3]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[7][4]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[7][5]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "SEVEN_SEGMENT_N_O[7][6]" is stuck at VCC File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 24
+    Warning (13410): Pin "LED_GREEN_O[0]" is stuck at GND File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 25
+    Warning (13410): Pin "LED_GREEN_O[1]" is stuck at GND File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 25
+    Warning (13410): Pin "LED_GREEN_O[2]" is stuck at GND File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 25
+    Warning (13410): Pin "LED_GREEN_O[3]" is stuck at GND File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 25
+    Warning (13410): Pin "LED_GREEN_O[4]" is stuck at GND File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 25
+    Warning (13410): Pin "LED_GREEN_O[5]" is stuck at GND File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 25
+    Warning (13410): Pin "LED_GREEN_O[6]" is stuck at GND File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 25
+    Warning (13410): Pin "LED_GREEN_O[7]" is stuck at GND File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 25
+    Warning (13410): Pin "LED_GREEN_O[8]" is stuck at GND File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 25
+    Warning (13410): Pin "LED_RED_O[16]" is stuck at GND File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 148
+    Warning (13410): Pin "LED_RED_O[17]" is stuck at GND File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 148
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 6 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SWITCH_I[16]" File: C:/Users/Abrar Hussain/Downloads/Verilog_Whack-a-Mole_Project/ProjectFinal/rtl/experiment4.sv Line: 21
+Info (21057): Implemented 570 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 19 input pins
+    Info (21059): Implemented 83 output pins
+    Info (21061): Implemented 468 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 100 warnings
+    Info: Peak virtual memory: 4821 megabytes
+    Info: Processing ended: Sun Nov 02 01:49:25 2025
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:15
+
+
